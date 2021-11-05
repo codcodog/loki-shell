@@ -16,7 +16,7 @@ fi
 __fzf_history__() {
   local output
   output=$(
-    $LOGCLI query '{job="bash"}' --addr=$LOKI_URL --limit=50000 --batch=1000 --since=4380h -o raw --quiet | _bufcmd |
+    $LOGCLI query '{job="bash"}' --addr=$LOKI_URL --limit=5000 --batch=1000 --since=720h -o raw --quiet | _bufcmd |
       FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} $FZF_DEFAULT_OPTS -n2..,.. --tiebreak=index --bind=ctrl-r:toggle-sort $FZF_CTRL_R_OPTS +m " $(__fzfcmd) --query "$READLINE_LINE"
       ) || return
   READLINE_LINE=${output#*$'\t'}
