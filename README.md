@@ -10,13 +10,13 @@ loki shell
 
 ### 依赖
 
-- fzf
 - loki
 - promtail
 - logcli
+- fzf
 
-> loki是主服务器，负责存储日志和处理查询.  
-> promtail是代理，负责收集日志并将其发送给 loki.
+> loki 是主服务器，负责存储日志和处理查询.  
+> promtail 是代理，负责收集日志并将其发送给 loki.
 
 
 ### 安装
@@ -28,9 +28,13 @@ $ curl -O -L "https://github.com/grafana/loki/releases/download/v2.3.0/loki-linu
 
 $ unzip "loki-linux-amd64.zip"
 
-$ chmod a+x "loki-linux-amd64"
+$ mv loki-linux-amd64 loki
 ```
 
+运行 `loki`
+```bash
+$ nohup ./loki -config.file=loki-config.yaml > error.log 2>&1 &
+```
 
 
 

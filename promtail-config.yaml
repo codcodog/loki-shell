@@ -15,4 +15,4 @@ scrape_configs:
       - localhost
     labels:
       job: bash
-      __path__: ~/.bash_history
+      __path__: /home/USERNAME/.bash_history
