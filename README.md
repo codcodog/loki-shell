@@ -37,8 +37,32 @@ $ nohup ./loki -config.file=loki-config.yaml > error.log 2>&1 &
 ```
 
 
+在 `client` 端，安装 `promtail`
+```bash
+$ curl -O -L "https://github.com/grafana/loki/releases/download/v2.4.0/promtail-linux-amd64.zip"
+
+$ unzip "promtail-linux-amd64.zip"
+
+$ mv promtail-linux-amd64 promtail
+```
+
+运行 `promtail`
+```bash
+$ nohup ./promtail -config.file=promtail-config.yaml > error.log 2>&1 &
+```
+
+`client` 端还需要安装 `fzf` 和 `logcli`，这里不赘述，见参考.
+
+
+最后，在 `terminal` 使用，加载 `bash` 配置即可.
+```bash
+$ source loki-shell.bash
+```
+
 
 ### 参考
 
-[Loki](https://grafana.com/docs/loki/latest/installation/)  
+[loki](https://grafana.com/docs/loki/latest/installation/)  
+[fzf](https://github.com/junegunn/fzf#installation)  
+[logcli](https://grafana.com/docs/loki/latest/getting-started/logcli/)  
 [Level up your shell history with Loki and fzf](https://opensource.com/article/20/10/shell-history-loki-fzf)

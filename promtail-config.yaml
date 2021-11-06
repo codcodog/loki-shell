@@ -15,4 +15,4 @@ scrape_configs:
       - localhost
     labels:
       job: bash
-      __path__: /home/USERNAME/.bash_history
+      __path__: /home/USERNAME/.bash_history # 可去除，直接使用 stdin 输入，见 loki-shell.bash 配置
